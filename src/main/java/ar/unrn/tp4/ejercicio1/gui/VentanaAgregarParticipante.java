@@ -2,7 +2,6 @@ package ar.unrn.tp4.ejercicio1.gui;
 
 import ar.unrn.tp4.ejercicio1.dominio.Participante;
 import ar.unrn.tp4.ejercicio1.dominio.Persistencia;
-import ar.unrn.tp4.ejercicio1.dominio.Region;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -55,7 +54,7 @@ public class VentanaAgregarParticipante extends JFrame {
 
 	private void onBotonCargar() {
 		try {
-			Participante p = new Participante(nombre.getText(), telefono.getText(), Region.CHINA);
+			Participante p = new Participante(nombre.getText(), telefono.getText(), region.getText());
 			persistencia.agregarParticipante(p);
 			dispose();
 		} catch (RuntimeException e) {

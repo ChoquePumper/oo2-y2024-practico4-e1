@@ -10,7 +10,7 @@ public record Participante(Nombre nombre, Telefono telefono, Region region) {
 		Objects.requireNonNull(region, "Región no especificada.");
 	}
 
-	public Participante(String nombre, String telefono, Region region) {
-		this(new Nombre(nombre), new Telefono(telefono), region);
+	public Participante(String nombre, String telefono, String region) {
+		this(new Nombre(nombre), new Telefono(telefono), Region.getPorNombre((region)));
 	}
 }

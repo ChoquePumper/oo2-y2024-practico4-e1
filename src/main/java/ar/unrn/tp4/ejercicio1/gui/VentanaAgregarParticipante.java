@@ -57,9 +57,9 @@ public class VentanaAgregarParticipante extends JFrame {
 		try {
 			Participante p = new Participante(nombre.getText(), telefono.getText(), Region.CHINA);
 			persistencia.agregarParticipante(p);
+			dispose();
 		} catch (RuntimeException e) {
 			JOptionPane.showMessageDialog(this, e.getMessage(), "Error al cargar participante", JOptionPane.ERROR_MESSAGE);
 		}
-		dispose();
 	}
 }

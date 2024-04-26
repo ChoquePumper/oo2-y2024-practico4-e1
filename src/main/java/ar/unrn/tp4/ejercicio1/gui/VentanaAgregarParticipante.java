@@ -1,7 +1,7 @@
 package ar.unrn.tp4.ejercicio1.gui;
 
 import ar.unrn.tp4.ejercicio1.dominio.Participante;
-import ar.unrn.tp4.ejercicio1.dominio.Persistencia;
+import ar.unrn.tp4.ejercicio1.dominio.SistemaDeParticipantes;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -13,10 +13,10 @@ public class VentanaAgregarParticipante extends JFrame {
 	private JTextField nombre;
 	private JTextField telefono;
 	private JTextField region;
-	private Persistencia persistencia;
+	private SistemaDeParticipantes sistemaDeParticipantes;
 
-	public VentanaAgregarParticipante(Persistencia persistencia) {
-		this.persistencia = persistencia;
+	public VentanaAgregarParticipante(SistemaDeParticipantes sistemaDeParticipantes) {
+		this.sistemaDeParticipantes = sistemaDeParticipantes;
 		setupUIComponents();
 	}
 
@@ -55,7 +55,7 @@ public class VentanaAgregarParticipante extends JFrame {
 	private void onBotonCargar() {
 		try {
 			Participante p = new Participante(nombre.getText(), telefono.getText(), region.getText());
-			persistencia.agregarParticipante(p);
+			sistemaDeParticipantes.agregarParticipante(p);
 			dispose();
 		} catch (RuntimeException e) {
 			JOptionPane.showMessageDialog(this, e.getMessage(), "Error al cargar participante", JOptionPane.ERROR_MESSAGE);

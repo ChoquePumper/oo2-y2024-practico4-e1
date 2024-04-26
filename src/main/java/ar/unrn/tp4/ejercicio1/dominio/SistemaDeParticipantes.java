@@ -1,6 +1,6 @@
 package ar.unrn.tp4.ejercicio1.dominio;
 
-public interface Persistencia {
+public interface SistemaDeParticipantes {
 
 	void agregarParticipante(Participante participante);
 }

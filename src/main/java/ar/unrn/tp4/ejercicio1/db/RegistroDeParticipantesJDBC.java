@@ -1,14 +1,14 @@
 package ar.unrn.tp4.ejercicio1.db;
 
 import ar.unrn.tp4.ejercicio1.dominio.Participante;
-import ar.unrn.tp4.ejercicio1.dominio.Persistencia;
+import ar.unrn.tp4.ejercicio1.dominio.SistemaDeParticipantes;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class RegistroDeParticipantesJDBC implements Persistencia {
+public class RegistroDeParticipantesJDBC implements SistemaDeParticipantes {
 
 	private Connection dbConn;
 

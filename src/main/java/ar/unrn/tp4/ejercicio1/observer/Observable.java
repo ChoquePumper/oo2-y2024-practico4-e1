@@ -11,7 +11,7 @@ public abstract class Observable {
 		observadores.add(observador);
 	}
 
-	protected void notificar(Map<String, Object> params) {
+	protected void notificarNuevoRegistro(Map<String, Object> params) {
 		for (Observer observador : observadores)
 			observador.avisarNuevoRegistro(params);
 	}
